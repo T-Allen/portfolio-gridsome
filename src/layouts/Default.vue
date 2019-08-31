@@ -1,8 +1,8 @@
 <template>
-  <div v-if="background" class="background min-h-screen bg-scroll xl:bg-cover overflow-hidden bg-no-repeat">
+  <div v-if="background" class="background min-h-screen bg-scroll xl:bg-cover overflow-hidden bg-no-repeat px-20 py-10">
     <slot/>
   </div>
-  <div v-else class="min-h-screen bg-scroll xl:bg-cover overflow-hidden bg-no-repeat">
+  <div v-else class="min-h-screen bg-scroll xl:bg-cover overflow-hidden bg-no-repeat px-20 py-10">
     <slot/>
   </div>
 </template>

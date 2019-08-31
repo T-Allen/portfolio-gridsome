@@ -12,6 +12,8 @@
     "@fortawesome/free-regular-svg-icons": "^5.10.2",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@gridsome/source-contentful": "^0.4.0",
+    "dotenv": "^8.1.0",
     "gridsome": "^0.6.0",
     "gridsome-plugin-tailwindcss": "^2.2.19"
   }

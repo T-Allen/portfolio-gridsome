@@ -3,7 +3,6 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-
 module.exports = {
   siteName: 'Tariku Allen',
   siteDescription: 'Tariku Allen\'s portfolio.',
@@ -13,6 +12,16 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      use: '@gridsome/source-contentful',
+      options: {
+        space: process.env.CONTENTFUL_SPACE,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: 'cdn.contentful.com',
+        environment: 'master',
+        typeName: 'Contentful'
+      }
+    },
     {
       use: 'gridsome-plugin-tailwindcss',
       options: {

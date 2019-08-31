@@ -1,16 +1,19 @@
 module.exports = {
   theme: {
     extend: {
+      borderRadius: {
+        'xl': '40px'
+      },
       fontSize: {
         'title': '6rem',
       },
       height: {
         'card': '300px',
-        'card-xl': '35VH'
+        'card-xl': '35VH',
+        'half': '50%',
+        'half-screen': '50VH',
+        'quart-screen': '25VH'
       }
-    },
-    borderRadius: {
-      'large': '40px'
     },
     fontFamily: {
       'display': ['Josefin Sans', 'Roboto', 'sans-serif'],
@@ -18,5 +21,15 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: []
+  plugins: [
+    function({ addUtilities }) {
+      const utilities = {
+        '.grid': {
+          display: 'grid',
+        }
+      }
+      
+      addUtilities(utilities, ['responsive', 'hover'])
+    },
+  ]
 }

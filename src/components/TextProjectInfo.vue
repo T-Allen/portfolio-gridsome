@@ -1,5 +1,5 @@
 <template>
-    <div class="font-body">
+    <div class="flex flex-col font-body">
         <div class="font-medium">
             <div class="mb-3">
                 <span>Project Date:</span>
