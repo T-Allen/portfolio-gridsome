@@ -1,10 +1,8 @@
 <template>
     <div class="flex flex-col xl:flex-row text-primary overflow-x-hidden">
-        <div class="fixed flex h-12 z-40 bg-white xl:hidden w-full px-6 py-3 shadow-md">
-            <button class="z-50">
-                <svg class="nav-toggle feather stroke-current xl:hidden" @click="toggleNav()"> 
-                    <use xlink:href="../../node_modules/feather-icons/dist/feather-sprite.svg#menu"/>
-                </svg>
+        <div class="fixed flex z-40 bg-white xl:hidden w-full px-6 py-3 shadow-md">
+            <button class="z-50" @click="toggleNav" title="Menu">
+                <div v-html="menu"></div>
             </button>
         </div>
         <Navigation class="hidden xl:flex" :sections="$page.sectionTitles.section" />
@@ -27,7 +25,7 @@
                     :roles="$page.project.roles"
                     :tools="$page.project.tools"/>
                 </template>
-                <transition name="slide-down" appear>
+                <transition name="fade xl:slide-down" appear>
                     <Grid class="grid grid-card" :itemList="$page.project.sections" :gap="'1rem'">
                         <template v-slot:item="{ item }">
                             <Card :title="item.title"
@@ -187,7 +185,8 @@ export default {
             arrowDown: feather.icons['arrow-down'].toSvg({ class: 'stroke-current'}),
             arrowLeft: feather.icons['arrow-left'].toSvg({ class: 'stroke-current'}),
             arrowRight: feather.icons['arrow-right'].toSvg({ class: 'stroke-current'}),
-            menu: false,
+            menu: feather.icons['menu'].toSvg({ class: 'stroke-current'}),
+            showMenu: false,
             q: (name)  => document.querySelector(name)
         }
     },
@@ -199,8 +198,8 @@ export default {
     methods: {
         toggleNav: function () {
             let q = this.q
-            this.menu = !this.menu
-            if (this.menu) {
+            this.showMenu = !this.showMenu
+            if (this.showMenu) {
                 q('.nav-mobile').style.transform = 'translate(0%)';
                 q('.bg-nav').style.display = 'block';
                 q('.bg-nav').style.opacity = '25%';

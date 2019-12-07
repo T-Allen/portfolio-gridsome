@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <Lightbox v-if="this.lightbox" :description="this.description" :url="imageUrl(this.url, 'fill', 'center', '', '800')" />
+        <Lightbox v-if="this.lightbox" :description="this.description" :url="imageUrl(this.url, 'fill', 'center', '', '1200')" />
     </div>
 </template>
 <script>

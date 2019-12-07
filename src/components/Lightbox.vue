@@ -1,9 +1,7 @@
 <template>
     <div class="fixed inset-0 bg-primary flex flex-col items-center h-full w-full z-50">
-        <button class="absolute hidden sm:block bottom-0 right-0 mr-6 mb-6 z-50" @click="$emit('toggleLightbox')" title="Close">
-            <svg class="feather stroke-current text-white"> 
-                <use xlink:href="../../node_modules/feather-icons/dist/feather-sprite.svg#minimize-2"/>
-            </svg>
+        <button class="absolute hidden sm:block bottom-0 right-0 mr-6 mb-6 text-white z-50" @click="$emit('toggleLightbox')" title="Close">
+            <div v-html="minimize"></div>
         </button>
         <div class="flex h-full justify-center items-center">
             <img class="object-contain max-h-img-sm md:max-h-img-md lg:max-h-img" :data-src="this.url" :alt="this.description"/>
@@ -17,6 +15,11 @@
 import feather from 'feather-icons'
 export default {
     name: 'Lightbox',
+    data () {
+        return {
+            minimize: feather.icons['minimize-2'].toSvg({ class: 'stroke-current'})
+        }
+    },
     props: {
         description: String,
         url: String,

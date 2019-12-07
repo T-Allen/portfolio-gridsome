@@ -39,7 +39,7 @@ module.exports = {
         'card': '280px',  
       },
       maxHeight: {
-        'img': '800px',
+        'img': '1200px',
         'img-md': '600px',
         'img-sm': '300px',
       },

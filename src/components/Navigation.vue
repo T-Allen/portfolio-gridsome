@@ -3,7 +3,7 @@
         <ScrollProgress class="invisible xl:visible" />
         <div class="fixed h-full w-full xl:w-2/12">
             <div class="flex flex-col w-full h-full p-6">
-                <header class="flex justify-between text-primary items-center sm:hidden md:flex">
+                <header class="justify-between text-primary items-center sm:hidden md:flex">
                     <SocialIcons class="lg:text-2xl" />
                     <h4 class="text-3xl lg:text-5xl font-display text-right" :style="{ maxWidth: '150px'}">Tariku Allen</h4>
                 </header>
