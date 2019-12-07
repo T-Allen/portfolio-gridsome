@@ -7,14 +7,19 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/free-regular-svg-icons": "^5.10.2",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@contentful/rich-text-html-renderer": "^13.4.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
     "@gridsome/source-contentful": "^0.4.0",
     "dotenv": "^8.1.0",
-    "gridsome": "^0.6.0",
-    "gridsome-plugin-tailwindcss": "^2.2.19"
+    "feather-icons": "^4.24.1",
+    "gridsome": "^0.7.11",
+    "gridsome-plugin-tailwindcss": "^2.2.26",
+    "heroicons-ui": "^1.0.0",
+    "typeface-josefin-sans": "0.0.75",
+    "typeface-raleway": "0.0.75"
   }
 }

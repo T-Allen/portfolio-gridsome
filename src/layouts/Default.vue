@@ -1,34 +1,19 @@
 <template>
-  <div v-if="background" class="background min-h-screen bg-scroll xl:bg-cover overflow-hidden bg-no-repeat px-20 py-10">
+  <section :id="this.id" class="min-h-screen relative xl:p-24">
     <slot/>
-  </div>
-  <div v-else class="min-h-screen bg-scroll xl:bg-cover overflow-hidden bg-no-repeat px-20 py-10">
-    <slot/>
-  </div>
+  </section>
 </template>
 <script>
 export default {
   props: {
-    background: Boolean
+    id: String
   }
 }
 </script>
-
 <static-query>
 query {
-  metaData {
+  metadata {
     siteName
   }
 }
 </static-query>
-
-<style scoped>
-body {
-  margin:0;
-  padding:0;
-}
-.background {
-  background-image: url('../background.svg');
-  background-position: 100% 80%;
-}
-</style>

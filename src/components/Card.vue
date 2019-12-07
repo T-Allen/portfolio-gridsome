@@ -1,33 +1,26 @@
 <template>
-    <div class="flex flex-col h-card xl:h-card-xl bg-no-repeat shadow-lg max-w-xs rounded-large m-4">
-        <div class="flex flex-1 p-6">
-            <div class="self-center w-1/3 text-3xl font-body font-bold text-white" v-text="title"></div>
+    <div class="card card-shadow flex flex-col w-card-sm h-card-sm md:w-card-md md:h-card-md xl:w-card xl:h-card rounded-xl font-body relative overflow-hidden">
+        <div class="flex flex-1 rounded-t-xl relative" :style="{ background: 'url(' + this.imageUrl + ')', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
+        }">
+            <div class="absolute p-2 right-0 bottom-0 z-30">
+                <slot name="title" />
+            </div>
+            <div class="h-full w-full rounded-t-xl card-gradient"></div>
         </div>
-        <div class="flex-1 rounded-b-large bg-white">
-            <p class="p-6 font-medium" v-text="summary"></p>
+        <div class="card-text-container flex flex-col justify-between pt-4 pb-6 px-6 rounded-b-xl bg-white relative">
+            <slot/>
+        </div>
+        <div class="absolute flex bottom-0 justify-end p-4 z-20 bg-white w-full">
+            <slot name="icons" />
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'card',
-
+    name: 'Card',
     props: {
-        url: String,
         title: String,
-        summary: String,
-    }
+        imageUrl: String,
+    },
 }
 </script>
-<style scoped>
-    .rounded-large {
-        background: 
-            linear-gradient(
-            rgba(255, 0, 0, 0.45), 
-            rgba(255, 0, 0, 0.45)
-            ),
-            url('../../static/testimg.jpg');
-        background-clip: content-box;
-        background-size: cover;
-    }
-</style>
