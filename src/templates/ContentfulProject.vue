@@ -13,39 +13,35 @@
                 <template v-slot:background>
                     <ImageBackground 
                     :baseUrl="$page.project.titleImage.file.url">
-                        <transition name="slide-right" appear>
-                            <h1
-                            class="absolute p-10 left-0 bottom-0  font-display leading-tight font-bold text-4xl lg:text-6xl text-white uppercase tracking-widest"
-                            v-text="$page.project.title"></h1>
-                        </transition>
+                        <h1
+                        class="absolute p-10 left-0 bottom-0 font-display leading-tight font-bold text-4xl lg:text-6xl slide-right text-white tracking-widest uppercase"
+                        v-text="$page.project.title"></h1>  
                     </ImageBackground>     
                 </template>
                 <template v-slot:content>
                     <TextBlockOverview :description="$page.project.description" :date="$page.project.date"
                     :roles="$page.project.roles"
                     :tools="$page.project.tools"/>
-                </template>
-                <transition name="fade xl:slide-down" appear>
-                    <Grid class="grid grid-card" :itemList="$page.project.sections" :gap="'1rem'">
-                        <template v-slot:item="{ item }">
-                            <Card :title="item.title"
-                            :imageUrl="item.titleImage.file.url">
-                                <template slot="title">
-                                    <h3 class="card-title text-2xl text-right text-white uppercase font-display font-bold" v-text="item.title"></h3>
-                                </template>
-                                <div class="card-text">
-                                    <p v-text="item.summary"></p>
-                                </div>
-                                <template slot="icons">
-                                    <button class="rounded-xl bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-secondary" title="Continue" @click="goTo(item.id)">
-                                        <div class="flex items-center m-2" v-html="arrowDown">
-                                        </div>
-                                    </button>
-                                </template>
-                            </Card>
-                        </template>
-                    </Grid>
-                </transition>
+                </template>           
+                <Grid class="grid grid-card fade xl:slide-down" :itemList="$page.project.sections" :gap="'1rem'">
+                    <template v-slot:item="{ item }">
+                        <Card :title="item.title"
+                        :imageUrl="item.titleImage.file.url">
+                            <template slot="title">
+                                <h3 class="card-title text-2xl text-right text-white uppercase font-display font-bold" v-text="item.title"></h3>
+                            </template>
+                            <div class="card-text">
+                                <p v-text="item.summary"></p>
+                            </div>
+                            <template slot="icons">
+                                <button class="rounded-xl bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-secondary" title="Continue" @click="goTo(item.id)">
+                                    <div class="flex items-center m-2" v-html="arrowDown">
+                                    </div>
+                                </button>
+                            </template>
+                        </Card>
+                    </template>
+                </Grid>
             </ProjectOverview>
             <ProjectDetail :id="section.id" v-for="(section, idx) in $page.project.sections" :key=idx>
                 <h2 class="float-right font-medium text-primary text-4xl md:text-5xl lg:text-6xl text-right" v-text="section.title"></h2>

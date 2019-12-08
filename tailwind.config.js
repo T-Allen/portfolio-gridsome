@@ -39,7 +39,7 @@ module.exports = {
         'card': '280px',  
       },
       maxHeight: {
-        'img': '1200px',
+        'img': '800px',
         'img-md': '600px',
         'img-sm': '300px',
       },
@@ -55,6 +55,38 @@ module.exports = {
       addBase({
         'h1': {
           fontWeight: config('theme.fontWeight.bold'),
+        },
+        '@keyframes fade': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1'
+          }
+        },
+        '@keyframes slideDown': {
+          '0%': {
+            transform: 'translateY(-300px)',
+          },
+          '100%': {
+            transform: 'translateY(0px)'
+          }
+        },
+        '@keyframes slideLeft': {
+          '0%': {
+            transform: 'translateX(300px)',
+          },
+          '100%': {
+            transform: 'translateX(0px)'
+          }
+        },
+        '@keyframes slideRight': {
+          '0%': {
+            transform: 'translateX(-300px)',
+          },
+          '100%': {
+            transform: 'translateX(0px)'
+          }
         },
       })
     },
@@ -211,11 +243,8 @@ module.exports = {
         '.grid-lg': {
           gridTemplateColumns: 'repeat(2, 50%)',
         },
-        '.fade-enter-active': {
-          transition: 'opacity 1s'
-        },
-        '.fade-enter': {
-          opacity: '0'
+        '.fade': {
+          animation: '1s fade'
         },
         '.img': {
           maxHeight: '800px',
@@ -224,21 +253,15 @@ module.exports = {
         '.nav': {
           transform: 'translate(0%, 0%)',
           transition: 'transform .5s'
-        }, 
-        '.slide-down-enter-active, .slide-right-enter-active, .slide-left-enter-active': {
-          transition: 'transform .6s ease-in-out, opacity .5s'
         },
-        '.slide-down-enter': {
-          transform: 'translate(0px, -300px)',
-          opacity: '0'
+        '.slide-down': {
+          animation: '600ms ease-in-out slideDown'
         },
-        '.slide-left-enter': {
-          transform: 'translate(300px)',
-          opacity: '0'
+        '.slide-right': {
+          animation: '600ms ease-in-out slideRight'
         },
-        '.slide-right-enter': {
-          transform: 'translate(-300px)',
-          opacity: '0'
+        '.slide-left': {
+          animation: '600ms ease-in-out slideLeft'
         },
         '.scrollover': {
           borderLeft: '3px solid rgba(255, 167, 241)',
