@@ -2,6 +2,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        lightGradient: 'linear-gradient(0deg, rgba(187,207,242,.8) 20%, rgba(187,207,242,0) 100%)',
+        blackGradient: 'linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(33,33,33,0.25) 80%)',
         primary: '#212121',
         overlay: 'linear-gradient(rgba(255, 167, 241), rgba(255, 192, 249))',
         secondary: '#646464',
@@ -137,18 +139,9 @@ module.exports = {
           boxShadow: '0 3px 9px rgba(0, 0, 0, 0.1)',
           transition: 'box-shadow 100ms ease-in-out',
           '.card-gradient': {
-            background: config('theme.colors.overlay'),
+            background: config('theme.colors.blackGradient'),
             opacity: '.8',
             transition: 'opacity 200ms'
-          },
-          '.card-text, .card-title': {
-            transition: 'opacity 200ms'
-          },
-          '.card-text': {
-            opacity: '0',
-          },
-          '.card-title': {
-            opacity: '100'
           },
           '.card-text-container': {
             height: '20%',
@@ -156,12 +149,6 @@ module.exports = {
           },
           '&:hover': {
             boxShadow: '0 9px 12px 2px rgba(0, 0, 0, 0.1)',
-            '.card-text': {
-              opacity: '100',
-            },
-            '.card-title': {
-              opacity: '0'
-            },
             '.card-text-container': {
               height: '75%',
             },
@@ -187,7 +174,7 @@ module.exports = {
           }
         },
         '.img-overlay': {
-          background: 'linear-gradient(rgba(255, 167, 241), rgba(255, 192, 249))'
+          background: config('theme.colors.overlay')
         },
         '.progress': {
           backgroundColor: config('theme.colors.primary'),
@@ -245,6 +232,9 @@ module.exports = {
         },
         '.fade': {
           animation: '1s fade'
+        },
+        '.hero-image': {
+          background: config('theme.colors.lightGradient')
         },
         '.img': {
           maxHeight: '800px',
