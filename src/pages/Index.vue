@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <footer class="xl:fixed bottom-0 flex justify-end left-0 w-full">
+    <footer class="absolute xl:fixed bottom-0 flex justify-end left-0 w-full">
       <Button class="btn-right" :link="$page.previews.edges[0].node.project.path">
         <p class="mr-2" v-text="'My Work'" ></p>
         <div v-html="arrowRight"></div>
