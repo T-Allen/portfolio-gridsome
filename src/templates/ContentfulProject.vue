@@ -25,21 +25,17 @@
                 </template>           
                 <Grid class="grid grid-card fade xl:slide-down" :itemList="$page.project.sections" :gap="'1rem'">
                     <template v-slot:item="{ item }">
-                        <Card :title="item.title"
-                        :imageUrl="item.titleImage.file.url">
-                            <template slot="title">
-                                <h3 class="card-title text-2xl text-right text-white uppercase font-display font-bold" v-text="item.title"></h3>
-                            </template>
-                            <div class="card-text">
-                                <p v-text="item.summary"></p>
-                            </div>
-                            <template slot="icons">
-                                <button class="rounded-xl bg-gray-200 hover:bg-gray-300 focus:bg-gray-400 text-secondary" title="Continue" @click="goTo(item.id)">
-                                    <div class="flex items-center m-2" v-html="arrowDown">
-                                    </div>
-                                </button>
-                            </template>
-                        </Card>
+                        <button :title="item.title" @click="goTo(item.id)">
+                            <Card :title="item.title"
+                            :imageUrl="item.titleImage.file.url">
+                                <template slot="title">
+                                    <h3 class="card-title w-full text-2xl text-white uppercase font-display font-bold" v-text="item.title"></h3>
+                                </template>
+                                <div class="card-text">
+                                    <p v-text="item.summary"></p>
+                                </div>
+                            </Card>
+                        </button>
                     </template>
                 </Grid>
             </ProjectOverview>

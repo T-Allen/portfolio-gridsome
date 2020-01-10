@@ -4,8 +4,8 @@
         <div class="fixed h-full w-full xl:w-2/12">
             <div class="flex flex-col w-full h-full p-6">
                 <header class="flex justify-between text-primary items-center sm:hidden md:flex">
+                    <h4 class="text-3xl lg:text-5xl font-display text-left" :style="{ maxWidth: '150px'}">Tariku Allen</h4>
                     <SocialIcons class="lg:text-2xl" />
-                    <h4 class="text-3xl lg:text-5xl font-display text-right" :style="{ maxWidth: '150px'}">Tariku Allen</h4>
                 </header>
                 <div class="flex items-start w-full h-full flex-col justify-center sm:justify-start md:justify-center">
                     <div class="flex w-full justify-between font-body font-bold text-xl xl:ml-3 py-3">
@@ -28,15 +28,13 @@
                     </button>
                 </g-link>
             </div>
-            <div class="absolute z-50 bottom-0 left-0 h-btn-sm md:h-btn-md lg:h-btn visible sm:invisible md:visible">
-                <Button class="btn-left" :link="'/'" title="All Projects">
-                    <div class="mr-2" v-html="arrowLeft"></div>
-                    <p class="btn-text" v-text="'All Projects'" ></p>
-                    <template v-slot:mask-group>
+            <div class="absolute btn-label flex p-3 md:p-6 text-primary w-full z-50 bottom-0 left-0 visible sm:invisible md:visible">
+                <g-link to="/">
+                    <button class="flex items-center mb-2 relative text-base lg:text-lg lg:text-xl uppercase tracking-widest" title="Home">
                         <div class="mr-2" v-html="arrowLeft"></div>
-                        <p class="btn-text" v-text="'All Projects'"></p>
-                    </template>
-                </Button>
+                        <p class="btn-text text-left" v-text="'All Projects'" ></p>
+                    </button>
+                </g-link>
             </div>
         </div>
     </nav>

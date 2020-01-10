@@ -2,7 +2,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lightGradient: 'linear-gradient(0deg, rgba(187,207,242,.8) 20%, rgba(187,207,242,0) 100%)',
         blackGradient: 'linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(33,33,33,0.25) 80%)',
         primary: '#212121',
         overlay: 'linear-gradient(rgba(255, 167, 241), rgba(255, 192, 249))',
@@ -20,7 +19,7 @@ module.exports = {
         'title': '6rem',
       },
       height: {
-        'btn': '250px',
+        'btn': '200px',
         'btn-md': '200px',
         'btn-sm': '160px',
         'border': '4px',
@@ -32,7 +31,7 @@ module.exports = {
         'quart-screen': '25VH'
       },
       width: {
-        'btn': '250px',
+        'btn': '200px',
         'btn-sm': '160px',
         'btn-md': '200px',
         'nav': '300px',
@@ -144,37 +143,16 @@ module.exports = {
             transition: 'opacity 200ms'
           },
           '.card-text-container': {
-            height: '20%',
+            height: '50%',
             transition: 'height 300ms ease-in-out'
           },
           '&:hover': {
             boxShadow: '0 9px 12px 2px rgba(0, 0, 0, 0.1)',
-            '.card-text-container': {
-              height: '75%',
-            },
           },
         },
         '.img-container': {
           'background-color': config('theme.colors.primary'),
           'background-position': 'top',
-          transition: 'transform 300ms ease-out',
-          '.feather, .img-overlay': {
-            opacity: '0',
-            transition: 'opacity 150ms',
-          },
-          '&:hover': {
-            cursor: 'pointer',
-            transform: 'scale(1.2)'
-          },
-          '&:hover .feather': {
-            opacity: '1'
-          },
-          '&:hover .img-overlay': {
-            opacity: '.75'
-          }
-        },
-        '.img-overlay': {
-          background: config('theme.colors.overlay')
         },
         '.progress': {
           backgroundColor: config('theme.colors.primary'),
@@ -234,7 +212,7 @@ module.exports = {
           animation: '1s fade'
         },
         '.hero-image': {
-          background: config('theme.colors.lightGradient')
+          background: config('theme.colors.blackGradient')
         },
         '.img': {
           maxHeight: '800px',
